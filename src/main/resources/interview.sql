@@ -11,7 +11,7 @@ CREATE TABLE `ledgers`  (
   `store_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `is_storage` int(0) NULL DEFAULT NULL,
   `quantity` int(0) NULL DEFAULT NULL,
-  `time` int(0) NULL DEFAULT NULL,
+  `time` bigint(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS `msgs`;
 CREATE TABLE `msgs`  (
   `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-  `time` int(0) NULL DEFAULT NULL,
+  `time` bigint(0) NULL DEFAULT NULL,
   `is_read` int(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
@@ -61,5 +61,11 @@ CREATE TABLE `stores`  (
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of stores
+-- ----------------------------
+INSERT INTO `stores` VALUES ('test1', 'test1');
+INSERT INTO `stores` VALUES ('test2', 'test2');
 
 SET FOREIGN_KEY_CHECKS = 1;

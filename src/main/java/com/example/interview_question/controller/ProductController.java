@@ -2,7 +2,7 @@ package com.example.interview_question.controller;
 
 import com.example.interview_question.entry.Product;
 import com.example.interview_question.service.ProductService;
-import com.example.interview_question.vo.ProductDto;
+import com.example.interview_question.dto.ProductDto;
 import com.example.interview_question.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class ProductController {
     @Autowired
     ProductService service;
 
-    @GetMapping()
+    @GetMapping
     public Result getProducts(@RequestParam(name = "current") Integer current, @RequestParam(name = "length") Integer length, @RequestParam(name = "name") String name) {
         ProductDto condition = new ProductDto();
         condition.setName(name);
